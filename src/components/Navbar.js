@@ -7,12 +7,15 @@ const navbar  = () =>{
 
     return(
         <React.Fragment>
-            <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="/">Logo</Navbar.Brand>
-                <Nav className="mr-auto">
-                <NavLink href="/research">Research</NavLink>
-                <NavLink href="/aboutus">About us</NavLink>
-                </Nav>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Navbar.Brand href="/">Flat Find</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="mr-auto">
+                        <NavLink href="/research">Research</NavLink>
+                        <NavLink href="/AboutUs">About Us</NavLink>
+                    </Nav>
+                </Navbar.Collapse>
             </Navbar>
         </React.Fragment>
     );     
