@@ -1,64 +1,60 @@
 import React, {Component} from "react";
-import axios from "axios"
 import {Button, Form} from "react-bootstrap";
+import {fetchPrice, postPrice} from "../../store/actions/PriceActionTypes/priceActions";
+import {connect} from "react-redux";
 
 
 
 class Research extends Component {
 
-    state = {
-        price: '',
-        district_name: 'Eixample',
-        sup: '80',
-        baths: '2',
-        rooms: '3',
+
+    state={
+        district_name:'',
+        sup:'',
+        baths:'',
+        rooms:''
     }
 
-    handlePriceRequest() {
+    componentDidMount() {
+        this.props.fetchPrice()
 
-        axios.get('http://localhost:5000/est/', {params:{
-                district_name: this.state.district_name,
-                sup: this.state.sup,
-                baths: this.state.baths,
-                rooms: this.state.rooms,
-            }}
-        ).then(response => {
-            const price = response.data
-            console.log(price)
-            this.setState(prevState=>({price,...prevState.price.price}))
-        }).catch(error => console.log(error))
     }
 
+    handleOnClickSubmit=()=>{
+
+        this.props.postPrice(this.state.district_name, parseInt(this.state.sup), parseInt(this.state.baths), parseInt(this.state.rooms))
+        console.log(this.state)
+
+    }
 
     render() {
 
         return(
-            <div>
-                <Form onSubmit={this.handlePriceRequest}>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type='text' placeholder="district" value={this.state.district_name} onChange={(event)=>this.setState({district_name:event.target.value})}/>
-                    </Form.Group>
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="number" placeholder="baths" value={this.state.baths} onChange={(event)=>this.setState({baths:event.target.value})} />
-                    </Form.Group>
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="number" placeholder="sup" value={this.state.sup} onChange={(event)=>this.setState({sup:event.target.value})} />
-                    </Form.Group>
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="number" placeholder="rooms" value={this.state.rooms} onChange={(event)=>this.setState({rooms:event.target.value})} />
-                    </Form.Group>
-                    <Button type="submit" onSubmit={this.handlePriceRequest}>
-                        Submit
-                    </Button>
+            <React.Fragment>
+                <Form>
+                    <Form.Control type='text' placeholder="district" value={this.state.district_name} onChange={(event)=>this.setState({district_name:event.target.value})}/>
+                    <Form.Control type="number" placeholder="baths" value={this.state.baths} onChange={(event)=>this.setState({baths:event.target.value})} />
+                    <Form.Control type="number" placeholder="sup" value={this.state.sup} onChange={(event)=>this.setState({sup:event.target.value})} />
+                    <Form.Control type="number" placeholder="rooms" value={this.state.rooms} onChange={(event)=>this.setState({rooms:event.target.value})} />
                 </Form>
-                <p>{this.state.price}</p>
-            </div>
+                <Button onClick={this.handleOnClickSubmit}>Submit</Button>
+
+                <p>{this.props.price.price}</p>
+
+            </React.Fragment>
+
         )
     }
 }
-
-export default Research;
+const mapStateToProps=(state)=>{
+    return{
+        price:state.price.priceData
+    }
+}
+const mapDispatchToProps=dispatch=>{
+    return{
+        postPrice:(district_name, sup, baths, rooms)=>dispatch(postPrice(district_name, sup, baths, rooms)),
+        fetchPrice:()=>dispatch(fetchPrice())
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Research)
