@@ -40,6 +40,7 @@ class Research extends Component {
                 <Button onClick={this.handleOnClickSubmit}>Submit</Button>
 
                 <p>{this.props.price.price}</p>
+                <p>{console.log(this.state)}</p>
 
             </React.Fragment>
 
