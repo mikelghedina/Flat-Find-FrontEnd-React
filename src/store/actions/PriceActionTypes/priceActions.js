@@ -8,18 +8,18 @@ import {
 
 import axios from 'axios'
 
-export const postPrice =(district_name,sup,baths,rooms) =>{
+export const postPrice = state =>{
     return(dispatch)=>{
         dispatch(postPriceRequest())
-        axios.post('http://localhost:5000/est/',{params:{
-                district_name: district_name,
-                sup: sup,
-                baths: baths,
-                rooms: rooms,
+        axios.get('http://localhost:5000/est/',{params:{
+                district_name: state.district_name,
+                sup: state.sup,
+                baths: state.baths,
+                rooms: state.rooms,
             }})
             .then(response => {
                 console.log(response)
-                //dispatch(fetchPrice())
+                dispatch(fetchPrice())
             })
             .catch(error =>{
                 const errorMessage = error.message

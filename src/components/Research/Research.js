@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Button, Form} from "react-bootstrap";
+import {Button, Col, Form} from "react-bootstrap";
 import {fetchPrice, postPrice} from "../../store/actions/PriceActionTypes/priceActions";
 import {connect} from "react-redux";
 
@@ -17,12 +17,11 @@ class Research extends Component {
 
     componentDidMount() {
         this.props.fetchPrice()
-
     }
 
     handleOnClickSubmit=()=>{
 
-        this.props.postPrice(this.state.district_name, parseInt(this.state.sup), parseInt(this.state.baths), parseInt(this.state.rooms))
+        this.props.postPrice(this.state)
         console.log(this.state)
 
     }
@@ -31,13 +30,29 @@ class Research extends Component {
 
         return(
             <React.Fragment>
-                <Form>
-                    <Form.Control type='text' placeholder="district" value={this.state.district_name} onChange={(event)=>this.setState({district_name:event.target.value})}/>
-                    <Form.Control type="number" placeholder="baths" value={this.state.baths} onChange={(event)=>this.setState({baths:event.target.value})} />
-                    <Form.Control type="number" placeholder="sup" value={this.state.sup} onChange={(event)=>this.setState({sup:event.target.value})} />
-                    <Form.Control type="number" placeholder="rooms" value={this.state.rooms} onChange={(event)=>this.setState({rooms:event.target.value})} />
+                <Form onSubmit={this.handleOnClickSubmit}>
+                    <Form.Group>
+                        <Col>
+                            <Form.Control type='text' placeholder="district" value={this.state.district_name} onChange={(event)=>this.setState({district_name:event.target.value})}/>
+                        </Col>
+                    </Form.Group>
+                    <Form.Group>
+                        <Col>
+                            <Form.Control type="number" placeholder="baths" value={this.state.baths} onChange={(event)=>this.setState({baths: event.target.type === 'number' ? parseInt(event.target.value) : event.target.value})} />
+                        </Col>
+                    </Form.Group>
+                    <Form.Group>
+                        <Col>
+                            <Form.Control type="number" placeholder="sup" value={this.state.sup} onChange={(event)=>this.setState({sup: event.target.type === 'number' ? parseInt(event.target.value) : event.target.value})} />
+                        </Col>
+                    </Form.Group>
+                    <Form.Group>
+                        <Col>
+                            <Form.Control type="number" placeholder="rooms" value={this.state.rooms} onChange={(event)=>this.setState({rooms: event.target.type === 'number' ? parseInt(event.target.value) : event.target.value})} />
+                        </Col>
+                    </Form.Group>
+                    <Button onClick={this.handleOnClickSubmit}>Submit</Button>
                 </Form>
-                <Button onClick={this.handleOnClickSubmit}>Submit</Button>
 
                 <p>{this.props.price.price}</p>
                 <p>{console.log(this.state)}</p>
