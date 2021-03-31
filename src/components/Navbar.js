@@ -4,11 +4,12 @@ import Navbar from "react-bootstrap/Navbar";
 import NavLink from "react-bootstrap/NavLink";
 
 const navbar  = () =>{
-
+    
     return(
         <React.Fragment>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Navbar.Brand href="/">Flat Find</Navbar.Brand>
+                {/* <img scr="src/logo.png" className="logo"/> */}
+                {/* <Navbar.Brand href="/">Flat Find</Navbar.Brand> */}
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
