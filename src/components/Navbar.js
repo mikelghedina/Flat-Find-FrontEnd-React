@@ -2,14 +2,16 @@ import React from 'react';
 import Nav from 'react-bootstrap/Navbar'
 import Navbar from "react-bootstrap/Navbar";
 import NavLink from "react-bootstrap/NavLink";
+import logo from '../logo.png'
 
 const navbar  = () =>{
     
     return(
         <React.Fragment>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                {/* <img scr="src/logo.png" className="logo"/> */}
-                {/* <Navbar.Brand href="/">Flat Find</Navbar.Brand> */}
+                <Navbar.Brand href="/">
+                    <img src={logo} alt="logo" width="60px"/>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
