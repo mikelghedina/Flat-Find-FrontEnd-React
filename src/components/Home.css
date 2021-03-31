@@ -1,0 +1,44 @@
+.introFlatFind{
+    font-family: "Bahnschrift", sans-serif;
+    font-size: 20px;
+    width: 50%;
+    text-align: justify;
+    position: relative;
+    top:30%;
+    left: 25%;
+}
+
+.background{
+    background-color:#CCCCCC;
+    position: relative;
+    margin-top:220px;
+    height: 220px;
+}
+
+.consulta{
+    background-color: white;
+    font-family: "Bahnschrift", sans-serif;
+    border:3px solid #66CC33;
+    font-size: 20px;
+    padding: 8px;
+    position: relative;
+    left: 45%;
+    top:40px;
+    transition-duration: 0.3s;
+
+
+}
+
+
+.consulta:hover{
+    background-color:#f5f5f5;
+    /* opacity: 40%; */
+}
+
+.linia1{
+    width: 45%;
+    height: 5px;
+    position: relative;
+    top:-5px;
+    background-color: #66CC33;
+}
