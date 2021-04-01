@@ -3,22 +3,95 @@
     font-family: "Bahnschrift", sans-serif;
     font-size: 20px;
     padding: 20px;
-    margin-left: 28%;
+    margin-left: 34%;
     width: 700px;
 }
 .formulario{
-    size: 80px;
+    width: 180px;
     border:3px solid #66CC33;
     border-radius: 0px;
+    font-family: "Bahnschrift", sans-serif;
+    font-size: 19px;
 }
-.background{
+
+/* .formulario:active,.formulario::selection,.formulario::-moz-selection{
+    border:3px solid #66CC33 !important;
+    outline-color:#66CC33 !important;
+    outline:none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+} */
+
+.backgroundR{
     background-color:#CCCCCC;
     position: relative;
-    margin-top:220px;
-    height: 220px;
+    margin-top:120px;
+    height: 260px;
 
 }
 
-.preguntas{
-    /* width: 150px; */
+.row, .preguntas{
+    padding: 5px 0px;
+}
+
+.button{
+    background-color: white;
+    color: black;
+    font-family: "Bahnschrift", sans-serif;
+    border:3px solid #66CC33;
+    font-size: 20px;
+    padding: 8px;
+    position: relative;
+    left: 32%;
+    top:80px;
+    transition-duration: 0.3s;
+    text-decoration: none;
+    border-radius: 0px;
+}
+
+.button:hover,.button:active,.button:focus{
+    background-color: #f5f5f5 !important;
+    color: black;
+    border:3px solid #66CC33;
+    outline:none;
+    box-shadow: none;
+    -webkit-box-shadow: none !important;
+}
+
+
+
+.linia2{
+    width: 40%;
+    height: 5px;
+    position: relative;
+    top:0px;
+    background-color: #66CC33;
+}
+
+.modalHeader{
+    border:0px;
+    padding: 6px 10px 0px 0px;
+}
+
+.modalBody{
+    font-family: "Bahnschrift", sans-serif;
+    font-size: 20px;
+    padding: 10px 50px;
+}
+
+.modal-content{
+    border-radius: 0px;
+    border: 0px;
+    background-color:#e7e6e6;
+    margin-top: 20px;
+    position: absolute;
+    top: 150px;
+    width: 110%;
+}
+
+.logoModal{
+    width: 100px;
+    left: 40%;
+    padding: 10px;
+    position: relative;
 }

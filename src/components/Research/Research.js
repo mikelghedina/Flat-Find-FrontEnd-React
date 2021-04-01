@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Button,  Col, Form, Row, Modal} from "react-bootstrap";
 import {fetchPrice, postPrice} from "../../store/actions/PriceActionTypes/priceActions";
 import {connect} from "react-redux";
+import logo from '../../logo.png'
 import './Research.css';
 
 
@@ -17,7 +18,7 @@ class Research extends Component {
         baths:'',
         room_list:[1,2,3,4,5],
         rooms:'',
-        onShow:false,
+        onShow:false, /**/
     }
 
     componentDidMount() {
@@ -42,15 +43,15 @@ class Research extends Component {
             <React.Fragment>
                 <Modal show={this.state.onShow} onHide={this.handleOnHide} >
                     
-                    <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Header className='modalHeader' closeButton>
+                        <img src={logo} alt='logo' className='logoModal'/>
                     </Modal.Header>
-                    <Modal.Body>{this.props.price.price}</Modal.Body>
-                    <Modal.Footer>   
+                    <Modal.Body className='modalBody' closeButton>El precio estimado de vivir en {this.state.district_name} con {this.state.sup} metros², {this.state.rooms} habitaciones y {this.state.baths} baños es de {this.props.price.price}€</Modal.Body>
+                    {/* <Modal.Footer>   
                        <Button onClick={this.handleOnHide}>cerrar</Button>                      
-                    </Modal.Footer>
+                    </Modal.Footer> */}
                 </Modal>
-                <div className='background'>
+                <div className='backgroundR'>
                     <Form className='form' onSubmit={this.handleOnClickSubmit}>
                         <Form.Group as={Row}>
                             <Col className='preguntas'>
@@ -65,7 +66,7 @@ class Research extends Component {
                             </Col>
                         </Form.Group>                        
                         <Form.Group  as={Row}>
-                            <Col>
+                            <Col className='preguntas'>
                                 ¿Cuantos metros² quieres?
                             </Col> 
                             <Col>
@@ -77,19 +78,7 @@ class Research extends Component {
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row}>
-                            <Col>
-                                ¿Cuantos baños necesitas?
-                            </Col> 
-                            <Col>
-                                <Form.Control as='select' type="number" className='formulario' placeholder="baths" value={this.state.baths} onChange={(event)=>this.setState({baths: event.target.type === 'number' ? parseInt(event.target.value) : event.target.value})}>
-                                <option disabled selected value=''>Baños</option>
-                                    {this.state.bath_list.map(b=>
-                                        <option>{[b]}</option>
-                                        )}</Form.Control>
-                            </Col>
-                        </Form.Group>
-                        <Form.Group as={Row}>
-                            <Col>
+                            <Col className='preguntas'>
                             ¿Cuantas habitaciones necesitas?
                             </Col> 
                             <Col>
@@ -100,9 +89,23 @@ class Research extends Component {
                                         )}</Form.Control>
                             </Col>
                         </Form.Group>
-                        <Button onClick={this.handleOnClickSubmit}>Submit</Button>
+                        <Form.Group as={Row}>
+                            <Col className='preguntas'>
+                                ¿Cuantos baños necesitas?
+                            </Col> 
+                            <Col >
+                                <Form.Control as='select' type="number" className='formulario' placeholder="baths" value={this.state.baths} onChange={(event)=>this.setState({baths: event.target.type === 'number' ? parseInt(event.target.value) : event.target.value})}>
+                                <option disabled selected value=''>Baños</option>
+                                    {this.state.bath_list.map(b=>
+                                        <option>{[b]}</option>
+                                        )}</Form.Control>
+                            </Col>
+                        </Form.Group>
+
+                        <Button className='button'onClick={this.handleOnClickSubmit}>Calcular</Button>
                     </Form>
                 </div>
+                <div className='linia2'></div>
             </React.Fragment>
 
         )
