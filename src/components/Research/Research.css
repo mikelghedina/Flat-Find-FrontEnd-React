@@ -1,15 +1,14 @@
-<<<<<<< HEAD
 .form{
     position: absolute;
 }
 .formulario{
     size: 80px;
     border:3px solid #66CC33;
-=======
+}
 .background{
     background-color:#CCCCCC;
     position: relative;
     margin-top:220px;
     height: 220px;
->>>>>>> 6235a098e16cb80bc155e12edbe03d247cbd48ae
+
 }

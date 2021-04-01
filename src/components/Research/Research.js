@@ -2,11 +2,7 @@ import React, {Component} from "react";
 import {Button,  Col, Form} from "react-bootstrap";
 import {fetchPrice, postPrice} from "../../store/actions/PriceActionTypes/priceActions";
 import {connect} from "react-redux";
-<<<<<<< HEAD
 import './Research.css';
-=======
-import './Research.css'
->>>>>>> 6235a098e16cb80bc155e12edbe03d247cbd48ae
 
 
 class Research extends Component {

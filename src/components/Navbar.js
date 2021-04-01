@@ -11,7 +11,7 @@ const navbar  = () =>{
         <React.Fragment>
             <Navbar collapseOnSelect expand="lg">
                 <Navbar.Brand href="/">
-                    <img src={logo} className="logo"/>
+                    <img src={logo} alt='logo' className="logo"/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
