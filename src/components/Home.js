@@ -1,12 +1,11 @@
 import React from "react";
 import './Home.css';
 // import Research from "./components/Research/Research";
-import logo from '../logo.png'
+
 
 const Home =()=>(
 
     <React.Fragment>
-    {/* <img src={logo}></img> */}
     <div className='background'>
     <div className='linia1'></div>
         <div className='introFlatFind'>Flat Find te permite encontrar el precio adecuado con las caracteristicas de tu piso ideal en Barcelona.
