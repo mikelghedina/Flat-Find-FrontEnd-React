@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Button,  Col, Form, Row} from "react-bootstrap";
+import {Button,  Col, Form, Row, Modal} from "react-bootstrap";
 import {fetchPrice, postPrice} from "../../store/actions/PriceActionTypes/priceActions";
 import {connect} from "react-redux";
 import './Research.css';
@@ -16,7 +16,8 @@ class Research extends Component {
         bath_list:[1,2,3],
         baths:'',
         room_list:[1,2,3,4,5],
-        rooms:''
+        rooms:'',
+        onShow:false,
     }
 
     componentDidMount() {
@@ -27,6 +28,11 @@ class Research extends Component {
 
         this.props.postPrice(this.state)
         console.log(this.state)
+        this.setState({onShow:true})
+
+    }
+    handleOnHide=()=>{
+        this.setState({onShow:false})
 
     }
 
@@ -34,6 +40,16 @@ class Research extends Component {
 
         return(
             <React.Fragment>
+                <Modal show={this.state.onShow} onHide={this.handleOnHide} >
+                    
+                    <Modal.Header closeButton>
+                        <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>{this.props.price.price}</Modal.Body>
+                    <Modal.Footer>   
+                       <Button onClick={this.handleOnHide}>cerrar</Button>                      
+                    </Modal.Footer>
+                </Modal>
                 <div className='background'>
                     <Form className='form' onSubmit={this.handleOnClickSubmit}>
                         <Form.Group as={Row}>
@@ -47,8 +63,7 @@ class Research extends Component {
                                     return <option key={d} value={d}>{[d]}</option>
                                 })}</Form.Control>
                             </Col>
-                        </Form.Group>
-                        
+                        </Form.Group>                        
                         <Form.Group  as={Row}>
                             <Col>
                                 ¿Cuantos metros² quieres?
@@ -73,7 +88,7 @@ class Research extends Component {
                                         )}</Form.Control>
                             </Col>
                         </Form.Group>
-                        <Form.Group  as={Row}>
+                        <Form.Group as={Row}>
                             <Col>
                             ¿Cuantas habitaciones necesitas?
                             </Col> 
