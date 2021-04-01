@@ -1,8 +1,12 @@
 import React, {Component} from "react";
-import {Button, Col, Form} from "react-bootstrap";
+import {Button,  Col, Form} from "react-bootstrap";
 import {fetchPrice, postPrice} from "../../store/actions/PriceActionTypes/priceActions";
 import {connect} from "react-redux";
+<<<<<<< HEAD
 import './Research.css';
+=======
+import './Research.css'
+>>>>>>> 6235a098e16cb80bc155e12edbe03d247cbd48ae
 
 
 class Research extends Component {
@@ -53,10 +57,6 @@ class Research extends Component {
                     </Form.Group>
                     <Button onClick={this.handleOnClickSubmit}>Submit</Button>
                 </Form>
-
-                <p>{this.props.price.price}</p>
-                <p>{console.log(this.state)}</p>
-
             </React.Fragment>
 
         )
@@ -69,7 +69,7 @@ const mapStateToProps=(state)=>{
 }
 const mapDispatchToProps=dispatch=>{
     return{
-        postPrice:(district_name, sup, baths, rooms)=>dispatch(postPrice(district_name, sup, baths, rooms)),
+        postPrice:(data)=>dispatch(postPrice(data)),
         fetchPrice:()=>dispatch(fetchPrice())
     }
 }
