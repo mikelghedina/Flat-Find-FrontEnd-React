@@ -1,11 +1,9 @@
 .logo{
-    width:30px;
-    /*position: absolute;*/
-    /*margin-left: 43%;*/
+    width:70px;
+    margin: 20px;
 }
 
 .navbar{
-   /* background: burlywood; */
    font-family: "Bahnschrift", sans-serif;
    color: black;
    text-decoration: none;
