@@ -1,8 +1,6 @@
 import React from "react";
 import './Home.css';
 import {Link} from "react-router-dom";
-// import Research from "./components/Research/Research";
-
 
 const Home =()=>(
 
@@ -14,12 +12,6 @@ const Home =()=>(
         </div>
         <Link to='/research' className='consulta'>Empezar</Link>
     </React.Fragment>
-
-
-
-
-
-
 );
 
 export default Home;

@@ -5,10 +5,11 @@ import gemma from '../../profileImages/Gemma.jpg'
 import edgar from '../../profileImages/Edgar.jpeg'
 import miguel from '../../profileImages/Miguel.jpeg'
 import mikel from '../../profileImages/Mikel.jpeg'
-
+import linkedin from './linkedin.png'
 
 const AboutUs =()=>(
     <div>
+        <div className='title'>Equipo</div>
         <Row className='row'>
             <div className='column'>
                 <Card className='card'>
@@ -16,9 +17,9 @@ const AboutUs =()=>(
                     <Card.Body>
                         <Card.Title>Gemma Reverter</Card.Title>
                         <Card.Text>
-                            FullStack Developer
+                            FrontEnd Developer
                         </Card.Text>
-                        <Button variant="primary" href='https://www.linkedin.com/in/gemmareverter/'>My Linkedin</Button>
+                        <Button className='link' variant="primary" href='https://www.linkedin.com/in/gemmareverter/'><img src={linkedin} alt='linkedin' className='linkedin'/></Button>
                     </Card.Body>
                 </Card>
             </div>
@@ -30,7 +31,7 @@ const AboutUs =()=>(
                         <Card.Text>
                             FullStack Developer
                         </Card.Text>
-                        <Button variant="primary" href='https://www.linkedin.com/in/mikelghedina/'>My Linkedin</Button>
+                        <Button className='link' variant="primary" href='https://www.linkedin.com/in/mikelghedina/'><img src={linkedin} alt='linkedin' className='linkedin'/></Button>
                     </Card.Body>
                 </Card>
             </div>
@@ -40,9 +41,9 @@ const AboutUs =()=>(
                     <Card.Body>
                         <Card.Title>Edgar Rodriguez</Card.Title>
                         <Card.Text>
-                            Back-End Developer
+                            BackEnd Developer
                         </Card.Text>
-                        <Button variant="primary" href='https://www.linkedin.com/in/edgarrodriguezdelacalle/'>My Linkedin</Button>
+                        <Button className='link' variant="primary" href='https://www.linkedin.com/in/edgarrodriguezdelacalle/'><img src={linkedin} alt='linkedin' className='linkedin'/></Button>
                     </Card.Body>
                 </Card>
             </div>
@@ -52,9 +53,9 @@ const AboutUs =()=>(
                     <Card.Body>
                         <Card.Title>Miguel Romera</Card.Title>
                         <Card.Text>
-                            Statistical
+                            Data Analyst
                         </Card.Text>
-                        <Button variant="primary" href='https://www.linkedin.com/in/miguelromeraalegre/'>My Linkedin</Button>
+                        <Button className='link' variant="primary" href='https://www.linkedin.com/in/miguelromeraalegre/'><img src={linkedin} alt='linkedin' className='linkedin'/></Button>
                     </Card.Body>
                 </Card>
             </div>

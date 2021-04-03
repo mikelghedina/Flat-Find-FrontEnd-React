@@ -6,6 +6,7 @@
     margin-left: 34%;
     width: 700px;
 }
+
 .formulario{
     width: 180px;
     border:3px solid #66CC33;
@@ -14,20 +15,11 @@
     font-size: 19px;
 }
 
-/* .formulario:active,.formulario::selection,.formulario::-moz-selection{
-    border:3px solid #66CC33 !important;
-    outline-color:#66CC33 !important;
-    outline:none !important;
-    box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-} */
-
 .backgroundR{
     background-color:#CCCCCC;
     position: relative;
-    margin-top:120px;
-    height: 260px;
-
+    margin-top:80px;
+    height: 310px;
 }
 
 .row, .preguntas{
@@ -58,10 +50,16 @@
     -webkit-box-shadow: none !important;
 }
 
-
-
 .linia2{
     width: 40%;
+    height: 5px;
+    position: relative;
+    top:0px;
+    background-color: #66CC33;
+}
+
+.linia3{
+    width: 100%;
     height: 5px;
     position: relative;
     top:0px;
@@ -76,7 +74,8 @@
 .modalBody{
     font-family: "Bahnschrift", sans-serif;
     font-size: 20px;
-    padding: 10px 50px;
+    padding: 13px 30px 35px 30px;
+    width: 100%;
 }
 
 .modal-content{
@@ -86,7 +85,9 @@
     margin-top: 20px;
     position: absolute;
     top: 150px;
-    width: 110%;
+    width: 120%;
+    left: -10%;
+    text-align: center;
 }
 
 .logoModal{

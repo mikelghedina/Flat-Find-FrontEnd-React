@@ -5,10 +5,7 @@ import {connect} from "react-redux";
 import logo from '../../logo.png'
 import './Research.css';
 
-
 class Research extends Component {
-
-
     state={
         district_names:["Ciutat Vella","Eixample", "Gracia","Horta" , "Les Corts" , "Nou Barris" , "Sant Andreu", "Sant Marti","Sants Montjuic", "Sarria"],
         district_name:'',
@@ -18,7 +15,7 @@ class Research extends Component {
         baths:'',
         room_list:[1,2,3,4,5],
         rooms:'',
-        onShow:false, /**/
+        onShow:false, 
     }
 
     componentDidMount() {
@@ -26,7 +23,6 @@ class Research extends Component {
     }
 
     handleOnClickSubmit=()=>{
-
         this.props.postPrice(this.state)
         console.log(this.state)
         this.setState({onShow:true})
@@ -34,11 +30,9 @@ class Research extends Component {
     }
     handleOnHide=()=>{
         this.setState({onShow:false})
-
     }
 
     render() {
-
         return(
             <React.Fragment>
                 <Modal show={this.state.onShow} onHide={this.handleOnHide} >
@@ -46,10 +40,8 @@ class Research extends Component {
                     <Modal.Header className='modalHeader' closeButton>
                         <img src={logo} alt='logo' className='logoModal'/>
                     </Modal.Header>
-                    <Modal.Body className='modalBody' closeButton>El precio estimado de vivir en {this.state.district_name} con {this.state.sup} metros², {this.state.rooms} habitaciones y {this.state.baths} baños es de {this.props.price.price}€</Modal.Body>
-                    {/* <Modal.Footer>   
-                       <Button onClick={this.handleOnHide}>cerrar</Button>                      
-                    </Modal.Footer> */}
+                    <Modal.Body className='modalBody' closeButton>El precio estimado de vivir en {this.state.district_name} con {this.state.sup} metros²,<br/> {this.state.rooms} habitaciones y {this.state.baths} baños es de {this.props.price.price}€</Modal.Body>
+                    <div className='linia3'></div>
                 </Modal>
                 <div className='backgroundR'>
                     <Form className='form' onSubmit={this.handleOnClickSubmit}>
@@ -107,7 +99,6 @@ class Research extends Component {
                 </div>
                 <div className='linia2'></div>
             </React.Fragment>
-
         )
     }
 }

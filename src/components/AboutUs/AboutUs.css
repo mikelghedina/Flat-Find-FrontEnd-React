@@ -1,8 +1,10 @@
 .card{
     width: 18rem;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-
+    border-radius: 0px;
+    text-align: center;
 }
+
 .img{
     object-fit: contain;
     height: 300px;
@@ -14,8 +16,9 @@
 }
 
 .row{
-    margin: 0 -5px;
+    width: 100%;
 }
+
 .row:after {
     content: "";
     display: table;
@@ -23,7 +26,26 @@
 }
 
 .column {
-    float: left;
-    width: 25%;
-    padding: 0 10px;
+    padding-left: 7%;
+}
+
+.link{
+    background-color:#66CC33;
+    border-radius: 0px;
+    border:0px
+}
+
+.link:hover{
+    background-color:#66CC33;
+}
+
+.linkedin{
+    width: 30px;
+}
+
+.title{
+    font-family: "Bahnschrift", sans-serif;
+    font-size: 40px;
+    color:#646464;
+    text-align: center;
 }

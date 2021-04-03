@@ -1,13 +1,12 @@
 .logo{
-    width:70px;
-    margin: 20px;
+    width: 110px;
+    margin: 10px;
 }
 
 .navbar{
    font-family: "Bahnschrift", sans-serif;
    color: black;
    text-decoration: none;
-
 }
 
 a{
@@ -18,4 +17,11 @@ a{
 
 a:hover{
     color:black;
+}
+
+.bcn{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    opacity: 0.7;
 }

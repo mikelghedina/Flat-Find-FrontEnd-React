@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Navbar'
 import Navbar from "react-bootstrap/Navbar";
 import NavLink from "react-bootstrap/NavLink";
 import logo from '../logo.png'
+import bcn from '../bcn2-01.png'
 import './Navbar.css'
 
 const navbar  = () =>{
@@ -21,6 +22,7 @@ const navbar  = () =>{
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
+            <img src={bcn} alt='bcn' className='bcn'/>
         </React.Fragment>
     );     
     

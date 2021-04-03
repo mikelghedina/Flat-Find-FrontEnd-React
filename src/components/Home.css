@@ -16,6 +16,7 @@
 }
 
 .consulta{
+    color: #757575;
     background-color: white;
     font-family: "Bahnschrift", sans-serif;
     border:3px solid #66CC33;
@@ -26,9 +27,7 @@
     top:40px;
     transition-duration: 0.3s;
     text-decoration: none;
-
 }
-
 
 .consulta:hover{
     background-color:#f5f5f5;
