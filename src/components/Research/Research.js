@@ -94,10 +94,10 @@ class Research extends Component {
                             </Col>
                         </Form.Group>
 
-                        <Button className='button'onClick={this.handleOnClickSubmit}>Calcular</Button>
+                        <Button className='button' onClick={this.handleOnClickSubmit}>Calcular</Button>
                     </Form>
                 </div>
-                <div className='linia2'></div>
+                <div className='linia2'/>
             </React.Fragment>
         )
     }
