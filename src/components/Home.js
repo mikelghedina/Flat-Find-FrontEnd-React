@@ -5,8 +5,8 @@ import {Link} from "react-router-dom";
 const Home =()=>(
 
     <React.Fragment>
-    <div className='background'>
-        <div className='linia1'></div>
+        <div className='background'>
+            <div className='linia1'/>
             <div className='introFlatFind'>Flat Find te permite encontrar el precio adecuado con las caracteristicas de tu piso ideal en Barcelona.
             Te recomienda los barrios que se adecuan al precio y a tus necesidades.</div>
         </div>

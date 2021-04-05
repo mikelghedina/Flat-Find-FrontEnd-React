@@ -17,8 +17,8 @@ const navbar  = () =>{
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto navbar">
-                        <NavLink href="/research">Research</NavLink>
-                        <NavLink href="/AboutUs">About Us</NavLink>
+                        <NavLink href="/research">Empezar</NavLink>
+                        <NavLink href="/AboutUs">Contacto</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

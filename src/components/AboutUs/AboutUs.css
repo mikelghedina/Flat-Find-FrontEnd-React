@@ -1,7 +1,7 @@
 .card{
     width: 18rem;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 0px;
+    border-radius: 0;
     text-align: center;
 }
 
@@ -26,13 +26,13 @@
 }
 
 .column {
-    padding-left: 7%;
+    padding-left: 5%;
 }
 
 .link{
     background-color:#66CC33;
-    border-radius: 0px;
-    border:0px
+    border-radius: 0;
+    border:0
 }
 
 .link:hover{

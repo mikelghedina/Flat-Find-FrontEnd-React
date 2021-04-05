@@ -41,7 +41,7 @@ class Research extends Component {
                         <img src={logo} alt='logo' className='logoModal'/>
                     </Modal.Header>
                     <Modal.Body className='modalBody' closeButton>El precio estimado de vivir en {this.state.district_name} con {this.state.sup} metros²,<br/> {this.state.rooms} habitaciones y {this.state.baths} baños es de {this.props.price.price}€</Modal.Body>
-                    <div className='linia3'></div>
+                    <div className='linia3'/>
                 </Modal>
                 <div className='backgroundR'>
                     <Form className='form' onSubmit={this.handleOnClickSubmit}>
