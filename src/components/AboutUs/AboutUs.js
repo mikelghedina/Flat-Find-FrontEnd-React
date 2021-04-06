@@ -4,7 +4,7 @@ import './AboutUs.css'
 import gemma from '../../profileImages/Gemma.jpg'
 import edgar from '../../profileImages/Edgar.jpeg'
 import miguel from '../../profileImages/Miguel.jpeg'
-import mikel from '../../profileImages/Mikel.jpeg'
+import mikel from '../../profileImages/Mikel.jpg'
 import linkedin from './linkedin.png'
 
 const AboutUs =()=>(
